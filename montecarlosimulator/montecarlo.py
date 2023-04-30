@@ -11,13 +11,13 @@ class Die:
         #self._df.set_index('face', inplace=True)
     
     def change_weight(self, face, new_weight):
-        if face not in self._df['face']:
+        if face not in self._df['face'].values:
             raise ValueError('Invalid Face')
         try:
             new_weight = float(new_weight)
         except ValueError:
             raise ValueError('Invalid Weight')
-        self._df.loc[face, 'weight'] = new_weight
+        self._df.loc[self._df['face'] == face, 'weight'] = new_weight
 
     def roll(self, roll_count=1):
         outcomes = []
