@@ -1,5 +1,3 @@
-# DS5100_Final_Project
+# Monte Carlo Simulator
 
-**Test**
 
-<font size ="1"> test
