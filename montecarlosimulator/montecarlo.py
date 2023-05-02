@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 import random
 from typing import List
 
@@ -7,19 +6,19 @@ from typing import List
 class Die:
     """
     This class creates a 'die', which is any discrete random variable
-    associated with a stochastic process, sush as using a deck of cards 
+    associated with a stochastic process, such as using a deck of cards 
     or flipping a coin or speaking a language.  A die has N sides, or "faces"
     and W weights and can be rolled to select a face.
 
     ATTRIBUTES
-    __die_df    a private dataframe with columns for face and weight of the die
-    face_type   dtype of the faces in the die
+    __die_df    a private dataframe with columns for face and weight of the die.
+    face_type   dtype of the faces in the die.
 
     METHODS
-    __init__    Initializes a Die object with the given array of faces
-    change_weight   Changes the weight of the specified face to a new weight
-    roll    Simulates rolling the die for a given amount of times
-    show    Returns the dataframe created in the initializer
+    __init__        Initializes a Die object with the given array of faces.
+    change_weight   Changes the weight of the specified face to a new weight.
+    roll            Simulates rolling the die for a given number of times.
+    show            Returns the dataframe created in the initializer.
     """
     def __init__(self, faces):
         """
@@ -30,7 +29,7 @@ class Die:
             other methods in the Die class.
         
         INPUTS
-        faces   an array of strings or numbers
+        faces   an array of strings or numbers.
 
         RETURNS
         None
@@ -46,8 +45,8 @@ class Die:
             are valid.
         
         INPUTS
-        face    a string or number that is a valid face for the Die. 
-        new_weight  a number that can be converted to a floating point
+        face        a string or number that is a valid face for the Die.
+        new_weight  a number that can be converted to a floating point.
 
         RETURNS
         None
@@ -68,13 +67,13 @@ class Die:
             A method to roll the die one or more times. Takes a parameter of how many
             times the die is to be rolled; defaults to 1. The roll is a random sample
             from the vector of faces according to the weights. Returns a list of outcomes
-            that are not stored internally
+            that are not stored internally.
         
         INPUTS
         roll_count  int for the amount of rolls. Defaults to 1.
 
         RETURNS
-        roll_results    a list of faces randomly selected according to weight
+        roll_results    a list of faces randomly selected according to weight.
         """
         #Temporary list for results
         roll_results = []
@@ -105,13 +104,13 @@ class Game:
     the most recent play.
 
     ATTRIBUTES
-    dice    list of similarly defined Die objects
+    dice        list of similarly defined Die objects
     __results   private dataframe of roll results for the most recent play
 
     METHODS
     __init__    Initializes a Game object from a list of Die objects passed
-    play    Rolls the dice in the Game for a specified amount of times
-    show    returns a wide or narrow view of the Game results
+    play        Rolls the dice in the Game for a specified amount of times
+    show        returns a wide or narrow view of the Game results
     """
     def __init__(self, dice:List[Die]):
         """
@@ -132,7 +131,7 @@ class Game:
     def play(self, rolls):
         """
         DESCRIPTION
-            A method to roll the dice in the Game object a specified amount of times.
+            A method to roll the dice in the Game object a specified number of times.
             All dice will be rolled and the results will be saved in a private dataframe 
             of shape N rolls by M dice.
         
@@ -156,7 +155,7 @@ class Game:
             returns a dataframe with a single column index with the roll number and each die
             as a column.  The narrow form returns a dataframe with a two-column index with
             the roll number & the die number and a column for the face rolled.
-            The string argument is defualted to wide. An invalid argument will raise an exception.
+            The string argument is defaulted to wide. An invalid argument will raise an exception.
         
         INPUTS
         form    a string of "wide" or "narrow"
@@ -172,13 +171,15 @@ class Game:
         else:
             raise ValueError("Invalid option for 'form'. Please choose either 'wide' or 'narrow'.")      
 
+
 class Analyzer:
     """
     Creates an Analyzer object from a Game object. An analyzer takes the results of a single
-    game and computes various descriptive statisticall properties about it.  These properties
+    game and computes various descriptive statistical properties about it.  These properties
     results are available as attributes of an Analyzer object.
 
     ATTRIBUTES
+    __data  dataframe of Game results in wide form
     face_dtype  Data type for the faces of the Die object in the Game object.
     jackpot_count    int representing the count of jackpot rolls during the game.
     jackpot_data    dataframe of jackpot rolls, index is roll number, columns for each Dice.
@@ -215,14 +216,14 @@ class Analyzer:
         DESCRIPTION
             A method to compute how many times the game resulted in all faces being
             identical. Returns an integer for the number the number of times a jackpot
-            occured. Saves a public dataframe of jackpot results with the roll number
+            occurred. Saves a public dataframe of jackpot results with the roll number
             as a named index.
         
         INPUTS
         None
 
         RETURNS
-        jackpot_count   int, number of times a jackpot occured in the Game
+        jackpot_count   int, number of times a jackpot occurred in the Game
         """
         #Only saves jackpot rolls from the Game results in a new dataframe, jackpot_data
         self.jackpot_data = self.__data[self.__data.apply(lambda row: row.nunique() == 1, axis = 1)]
@@ -259,7 +260,7 @@ class Analyzer:
             The results are saved in a public attribute dataframe called face_counts.
             The dataframe has an index of the roll number and face values as columns.
             The columns will have the amount of times that face appeared for the 
-            corresponding roll number. The method does not have inputs or retun anything
+            corresponding roll number. The method does not have inputs or return anything
 
         INPUTS
         None
@@ -267,5 +268,7 @@ class Analyzer:
         RETURNS
         None
         """
+        #Looks at every row of Game results, capturing the count of unique values and saving to new dataframe
         self.face_counts = self.__data.apply(lambda row: row.value_counts(), axis=1, result_type='expand').fillna(0)
+        #converts the values from float to int
         self.face_counts = self.face_counts.astype(int)
