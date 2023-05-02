@@ -11,4 +11,24 @@ Read below for instructions on how to install, import, create dice, play games a
  To install the python package on your local machine follow this step.  
    
   - Go to your command line and enter this command  
-      pip install "git+https://github.com/BrianBlancato/DS5100_Final_Project.git"
+      pip install "git+https://github.com/BrianBlancato/DS5100_Final_Project.git"  
+  
+The package is now installed in your python enviroment.  
+  
+<font size="2"> **Importing** </font>  
+To import the python module run this python code  
+    
+    import montepythonsimulator  
+  
+You are now ready to use the montepythonsimulator  
+  
+<font size="2"> **Creating dice** </font>  
+To create dice, follow the python code below.  
+  
+    #Die needs an array of faces as a parameter  
+    fair_die = montecarlosimulator.Die([1, 2, 3, 4, 5, 6])  
+
+<font size="2"> **Playing Games** </font>
+#First, create a game  
+    game = montecarlosimulator.Game([fair_die])  
+#
