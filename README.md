@@ -1,36 +1,39 @@
 # DS5100_Final_Project
 
-<font size="4"> **Metadata** </font>  
+<font size="6"> **Metadata** </font>  
 This is a Monte Carlo Simulator by Brian Blancato, a gradudate datascience student.  
 In this python package you will be able to create an object that is a discrete random variable associated with a stochastic processs.  This object will have customizable faces and weights to run through monte carlo simulations.  The package also contains self analyzing tools to compute various descriptive statistical properties about the simulation results.  
   
-<font size="4"> **Synopsis** </font>  
-Read below for instructions on how to install, import, create dice, play games and analyze games  
+<font size="6"> **Synopsis** </font>  
+Read below for instructions on how to install, import, create dice, play games and analyze games.  
   
- <font size="2"> **Installing** </font>   
+<font size="2"> **Installing** </font>   
  To install the python package on your local machine follow this step.  
    
   - Go to your command line and enter this command  
+
       pip install "git+https://github.com/BrianBlancato/DS5100_Final_Project.git"  
   
 The package is now installed in your python enviroment.  
   
 <font size="2"> **Importing** </font>  
-To import the python module run this python code  
+To import the python module run this python code.  
     
     import montepythonsimulator  
   
-You are now ready to use the montepythonsimulator  
+You are now ready to use the montepythonsimulator.  
   
 <font size="2"> **Creating dice** </font>  
 To create dice, follow the python code below.  
   
     #Die needs an array of faces as a parameter  
     fair_die = montecarlosimulator.Die([1, 2, 3, 4, 5, 6])  
-    #Change the weight of face 3 to 6  
+
+    #Change the weight of face 3 to 6.0  
     fair_die.change_weight(3, 6.0)  
 
 <font size="2"> **Playing Games** </font>  
+
     #First, create a game with two fair die  
     game = montecarlosimulator.Game([fair_die, fair_die])  
 
@@ -41,6 +44,7 @@ To create dice, follow the python code below.
     game.show("wide")
 
 <font size="2"> **Analyzing Games** </font>  
+
     #First, create an analyzer  
     analyzer = montecarlosimulator.Analyzer(game) 
 
@@ -58,7 +62,7 @@ To create dice, follow the python code below.
     analyzer.face_counts_per_roll()  
     analyzer.face_counts  
   
-<font size="4"> **API Description** </font>  
+<font size="6"> **API Description** </font>  
 <font size="2"> **Die Class** </font>  
     This class creates a 'die', which is any discrete random variable
     associated with a stochastic process, such as using a deck of cards 
@@ -73,7 +77,8 @@ To create dice, follow the python code below.
     roll            Simulates rolling the die for a given number of times.
     show            Returns the dataframe created in the initializer.  
       
-            <font size="2"> **change_weight** </font>  
+<font size="2"> **change_weight** </font>  
+
             DESCRIPTION
             A method to change the weight of a specified face. Takes two arguments, 
             the face and the new weight. Also checks if the face and weight passed
@@ -86,7 +91,8 @@ To create dice, follow the python code below.
             RETURNS
             None  
               
-            <font size="2"> **roll** </font>  
+<font size="2"> **roll** </font>  
+
             DESCRIPTION
             A method to roll the die one or more times. Takes a parameter of how many
             times the die is to be rolled; defaults to 1. The roll is a random sample
@@ -110,7 +116,7 @@ To create dice, follow the python code below.
             __die_df    private dataframe with columns face and weight  
               
 
-<font size="2"> **Game Class** </font>  
+<font size="2"> **Game Class** </font>    
     Creates a Game object which consists of rolling one or more dice of similarly defined
     dice (Die Objects). A Game is initiated by passing a list of dice.
     A Game that is played will roll all dice and the results will be saved for 
@@ -123,7 +129,8 @@ To create dice, follow the python code below.
     play        Rolls the dice in the Game for a specified amount of times
     show        returns a wide or narrow view of the Game results  
       
-            <font size="2"> **play** </font>  
+<font size="2"> **play** </font>  
+  
             DESCRIPTION
             A method to roll the dice in the Game object a specified number of times.
             All dice will be rolled and the results will be saved in a private dataframe 
