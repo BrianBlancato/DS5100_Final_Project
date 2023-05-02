@@ -223,13 +223,13 @@ To create dice, follow the python code below.
                 
 <font size="4"> **Manifest** </font>  
 -> DS5100_Final_Project  
-|   .gitignore  
-|        LICENSE  
-|        montecarlo_demo.ipynb  
-|        setup.py  
-|        README.md  
-|        ->montecarlosimulator  
-|                __init__.py  
-|                montecarlo.py  
-|                montecarlo_tests.py  
-|                test_results.txt
+    .gitignore  
+    LICENSE  
+    montecarlo_demo.ipynb  
+    setup.py  
+    README.md  
+        ->montecarlosimulator  
+        __init__.py  
+        montecarlo.py  
+        montecarlo_tests.py  
+        test_results.txt
