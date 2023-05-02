@@ -1,0 +1,23 @@
+test_combo (__main__.TestAnalyzer) ... d:\ds5100\ds5100_final_project\montecarlosimulator\montecarlo.py:148: DeprecationWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+  self.__results.iloc[:, i] = die.roll(rolls)
+ok
+test_face_counts_per_roll (__main__.TestAnalyzer) ... d:\ds5100\ds5100_final_project\montecarlosimulator\montecarlo.py:148: DeprecationWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+  self.__results.iloc[:, i] = die.roll(rolls)
+ok
+test_jackpot (__main__.TestAnalyzer) ... d:\ds5100\ds5100_final_project\montecarlosimulator\montecarlo.py:148: DeprecationWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+  self.__results.iloc[:, i] = die.roll(rolls)
+ok
+test_change_weight (__main__.TestDie) ... ok
+test_roll (__main__.TestDie) ... ok
+test_show (__main__.TestDie) ... ok
+test_play (__main__.TestGame) ... d:\ds5100\ds5100_final_project\montecarlosimulator\montecarlo.py:148: DeprecationWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+  self.__results.iloc[:, i] = die.roll(rolls)
+ok
+test_show (__main__.TestGame) ... d:\ds5100\ds5100_final_project\montecarlosimulator\montecarlo.py:148: DeprecationWarning: In a future version, `df.iloc[:, i] = newvals` will attempt to set the values inplace instead of always setting a new array. To retain the old behavior, use either `df[df.columns[i]] = newvals` or, if columns are non-unique, `df.isetitem(i, newvals)`
+  self.__results.iloc[:, i] = die.roll(rolls)
+ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.030s
+
+OK
