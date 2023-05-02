@@ -130,7 +130,7 @@ To create dice, follow the python code below.
     show        returns a wide or narrow view of the Game results  
       
 <font size="2"> **play** </font>  
-  
+
             DESCRIPTION
             A method to roll the dice in the Game object a specified number of times.
             All dice will be rolled and the results will be saved in a private dataframe 
@@ -142,7 +142,8 @@ To create dice, follow the python code below.
             RETURNS
             None  
               
-            <font size="2"> **show** </font>  
+<font size="2"> **show** </font>
+
             DESCRIPTION
             A method to show the user the results of the most recent play.  There are two
             options, wide and narrow, which is used as the single parameter.  The wide form
@@ -175,7 +176,8 @@ To create dice, follow the python code below.
     combo   Computes the distinct combinations of faces rolled, along with their counts.
     face_counts_per_roll    Computes how many times a given face is rolled in each event  
       
-            <font size="2"> **jackpot** </font>  
+<font size="2"> **jackpot** </font>
+
             DESCRIPTION
             A method to compute how many times the game resulted in all faces being
             identical. Returns an integer for the number the number of times a jackpot
@@ -188,7 +190,8 @@ To create dice, follow the python code below.
             RETURNS
             jackpot_count   int, number of times a jackpot occurred in the Game  
               
-            <font size="2"> **combo** </font>  
+<font size="2"> **combo** </font>
+
             DESCRIPTION
             A method to compute the distinct combinations of faces rolled, along with
             their counts.  The combinations are stored in a sorted public dataframe that
@@ -202,7 +205,8 @@ To create dice, follow the python code below.
             RETURNS
             None  
               
-            <font size="2"> **face_count_per_roll** </font>  
+<font size="2"> **face_count_per_roll** </font>
+
             DESCRIPTION
             A method to compute how many times a given face is rolled in each event.
             The results are saved in a public attribute dataframe called face_counts.
@@ -219,13 +223,13 @@ To create dice, follow the python code below.
                 
 <font size="4"> **Manifest** </font>  
 -> DS5100_Final_Project
-        .gitignore  
-        LICENSE  
-        montecarlo_demo.ipynb  
-        setup.py  
-        README.md  
-        ->montecarlosimulator  
-                __init__.py  
-                montecarlo.py  
-                montecarlo_tests.py  
-                test_results.txt
+|        .gitignore  
+|        LICENSE  
+|        montecarlo_demo.ipynb  
+|        setup.py  
+|        README.md  
+|        ->montecarlosimulator  
+|                __init__.py  
+|                montecarlo.py  
+|                montecarlo_tests.py  
+|                test_results.txt
