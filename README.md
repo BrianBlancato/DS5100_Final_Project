@@ -224,7 +224,7 @@ To create dice, follow the python code below.
 <font size="4"> **Manifest** </font>  
 
 -> DS5100_Final_Project  
-&nbsp&nbsp.gitignore  
+&nbsp;&nbsp;.gitignore  
     LICENSE  
     montecarlo_demo.ipynb  
     setup.py  
